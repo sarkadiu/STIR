@@ -1,0 +1,36 @@
+; TOF list-mode MMSE-OE with attenuation correction only.
+; Set INPUT, ATTENUATION_IMAGE, OUTPUT, or replace ${...} with filenames.
+; ATTENUATION_IMAGE is a registered 511 keV mu-map in cm^-1, not CT HU.
+; The sweep counts below are examples, not convergence guarantees.
+
+OE Parameters :=
+  input filename := ${INPUT}
+  attenuation image filename := ${ATTENUATION_IMAGE}
+  output filename prefix := ${OUTPUT}
+
+  ; Used only to compute non-TOF sensitivity. Event sampling uses no ray tracing.
+  projection matrix type := Ray Tracing
+  Ray Tracing Matrix Parameters :=
+    number of rays in tangential direction to trace for each bin := 1
+  End Ray Tracing Matrix Parameters :=
+
+  number of burn-in sweeps := 100
+  number of samples := 100
+  sweeps between samples := 1
+  random seed := 1
+
+  ; Seconds from acquisition start; -1 for end time means end of list.
+  start time := 0
+  end time := -1
+  ; -1 uses all segments; a nonnegative value limits absolute segment number.
+  maximum segment number := -1
+
+  zoom := 1
+  Z zoom := 1
+  XY output image size (in pixels) := -1
+  Z output image size (in pixels) := -1
+  Z offset (in mm) := 0
+
+  post-filter type := None
+  disable output := 0
+END OE Parameters :=

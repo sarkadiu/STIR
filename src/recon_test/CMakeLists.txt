@@ -24,6 +24,8 @@ set(${dir_SIMPLE_TEST_EXE_SOURCES}
 	test_DataSymmetriesForBins_PET_CartesianGrid.cxx
         test_FBP2D.cxx
         test_FBP3DRP.cxx
+        test_OriginEnsemble.cxx
+        test_OE.cxx
         test_blocks_on_cylindrical_projectors.cxx
         test_geometry_blocks_on_cylindrical.cxx
 )

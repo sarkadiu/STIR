@@ -61,6 +61,7 @@
 #include "stir/OSMAPOSL/OSMAPOSLReconstruction.h"
 #include "stir/KOSMAPOSL/KOSMAPOSLReconstruction.h"
 #include "stir/OSSPS/OSSPSReconstruction.h"
+#include "stir/OE/OEReconstruction.h"
 
 #ifdef HAVE_LLN_MATRIX
 #  include "stir/recon_buildblock/BinNormalisationFromECAT7.h"
@@ -141,6 +142,7 @@ static FBP3DRPReconstruction::RegisterIt dummy602;
 static OSMAPOSLReconstruction<DiscretisedDensity<3, float>>::RegisterIt dummy603;
 static KOSMAPOSLReconstruction<DiscretisedDensity<3, float>>::RegisterIt dummyK;
 static OSSPSReconstruction<DiscretisedDensity<3, float>>::RegisterIt dummy604;
+static OEReconstruction::RegisterIt dummyOE;
 
 static OSMAPOSLReconstruction<ParametricVoxelsOnCartesianGrid>::RegisterIt dummyOSMAPOSLPVC;
 static OSSPSReconstruction<ParametricVoxelsOnCartesianGrid>::RegisterIt dummyOSSPSPVC;

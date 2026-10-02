@@ -1176,7 +1176,7 @@ Image reconstruction programs}
 \subsubsection{
 Iterative algorithms}
 
-Two statistical reconstruction algorithms are currently implemented:
+The following statistical reconstruction algorithms are implemented:
 \begin{description}
 \item[OSMAPOSL] an implementation 
 of the OSEM-One Step Late algorithm with various additional refinements 
@@ -1184,9 +1184,16 @@ and capabilities. See [Jac00] for a description of many details of the
 implementation.
 \item[OSSPS] an implementation of the Ordered Subsets Paraboloidal
 Surrogate algorithm by Erdogan and Fessler, and Ahn and Fessler [Ahn2003]. 
+\item[OE] a serial origin-ensemble sampler for PET list-mode data, including TOF
+and attenuation correction from a 511 keV attenuation image. It samples positions
+directly along each LOR and uses non-TOF ray tracing for sensitivity. It uses the
+$(N+1)/M$ MMSE-OE count rule, burn-in, and ensemble averaging. Scatter and randoms
+correction are not implemented. Run \cmdline{OE OE.par}; see
+\texttt{examples/samples/OE.par} and \texttt{documentation/OE.md} for parameters,
+units, and limitations. Introduced after STIR 6.4.
 \end{description}
 
-Since \textit{STIR} 2.0, all iterative algorithms use a \textit{generalised objective 
+Since \textit{STIR} 2.0, the OSMAPOSL and OSSPS iterative algorithms use a \textit{generalised objective
 function}\footnote{We call them \textit{generalised} because they do not
 necessarily have to correspond to a function. Most algorithms only require
 that we can compute some kind of gradient. As an example, the update
